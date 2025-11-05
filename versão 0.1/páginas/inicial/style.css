@@ -1,0 +1,35 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.logonav{
+    margin-bottom: -18px;
+}
+.hero{
+    margin-top:5%;
+}
+.border-start {
+    border-left-width: 5px !important; 
+}
+
+@media (max-width: 767.98px) { 
+    .mobile-focus .container {
+        flex-direction: column;
+    }
+    .feature-card {
+        width: 100%; 
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .footer-column {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .hero{
+        margin-top:20%;
+    }
+}
