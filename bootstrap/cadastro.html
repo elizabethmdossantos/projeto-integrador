@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckGestão: Controle para Food Trucks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> 
+    </head>
+
+<body>
+    
+    <header class="header bg-white shadow-sm sticky-top">
+        <div class="container-fluid container-lg">
+            <nav class="navbar p-3">
+                <a class="navbar-brand fs-3 fw-bold text-danger text-decoration-none" href="#">🚚 TruckGestão</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="d-flex flex-grow-1">
+        
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-dark bg-white shadow-lg" style="width: 280px;" id="sidebar">
+            <h5 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none border-bottom pb-3">
+                Menu Principal
+            </h5>
+            <ul class="nav nav-pills flex-column mb-auto" id="sidebar-nav-links">
+                <li class="nav-item">
+                    <a href="#empresa" class="nav-link text-dark active" data-section="empresa" aria-current="page">
+                        <i class="bi bi-truck me-2"></i> Cadastro Empresa
+                    </a>
+                </li>
+                <li>
+                    <a href="#produto" class="nav-link text-dark" data-section="produto">
+                        <i class="bi bi-box-seam me-2"></i> Produtos
+                    </a>
+                </li>
+                <li>
+                    <a href="#estoque" class="nav-link text-dark" data-section="estoque">
+                        <i class="bi bi-boxes me-2"></i> Estoque
+                    </a>
+                </li>
+                <li>
+                    <a href="#cliente" class="nav-link text-dark" data-section="cliente">
+                        <i class="bi bi-people me-2"></i> Clientes
+                    </a>
+                </li>
+                <li>
+                    <a href="#vendas" class="nav-link text-dark" data-section="vendas">
+                        <i class="bi bi-cart-fill me-2"></i> Vendas
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content flex-grow-1 p-4">
+            
+            <section id="empresa" class="content-section">
+                <div class="card p-4">
+                    <h2 class="card-title text-danger mb-4"><i class="bi bi-truck me-2"></i> Cadastro da Empresa</h2>
+                    <form id="form-empresa">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nomeEmpresa" class="form-label">Nome Fantasia</label>
+                                <input type="text" class="form-control" id="nomeEmpresa" required placeholder="Ex: Truck de Burgers do Zé">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cnpjEmpresa" class="form-label">CNPJ</label>
+                                <input type="text" class="form-control" id="cnpjEmpresa" placeholder="00.000.000/0000-00" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefoneEmpresa" class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="telefoneEmpresa" placeholder="(99) 99999-9999" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="emailEmpresa" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="emailEmpresa" placeholder="contato@truck.com.br" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger mt-4 px-4"><i class="bi bi-save me-2"></i> Salvar Dados da Empresa</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="produto" class="content-section" style="display: none;">
+                <div class="card p-4">
+                    <h2 class="card-title text-danger mb-4"><i class="bi bi-box-seam me-2"></i> Cadastro de Produtos</h2>
+                    <form id="form-produto">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="nomeProduto" class="form-label">Nome do Produto</label>
+                                <input type="text" class="form-control" id="nomeProduto" required placeholder="Ex: X-Salada Clássico">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="precoProducao" class="form-label">Preço de Produção (Custo da Matéria-Prima)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">R$</span>
+                                    <input type="number" step="0.01" class="form-control" id="precoProducao" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="precoCusto" class="form-label">Preço de Venda ao Cliente</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">R$</span>
+                                    <input type="number" step="0.01" class="form-control" id="precoCusto" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger mt-4 px-4"><i class="bi bi-plus-circle me-2"></i> Cadastrar Produto</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="estoque" class="content-section" style="display: none;">
+                <div class="card p-4">
+                    <h2 class="card-title text-danger mb-4"><i class="bi bi-boxes me-2"></i> Gestão de Estoque</h2>
+                    <form id="form-estoque">
+                        <div class="row g-3">
+                            <div class="col-md-8">
+                                <label for="produtoEstoque" class="form-label">Produto/Insumo</label>
+                                <input type="text" class="form-control" id="produtoEstoque" required placeholder="Ex: Pão de Hambúrguer"></input>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="quantidadeEstoque" class="form-label">Quantidade</label>
+                                <input type="number" class="form-control" id="quantidadeEstoque" required min="1" placeholder="Ex: 50">
+                            </div>
+                            <div class="col-12">
+                                <label for="tipoMovimentacao" class="form-label">Tipo de Movimentação</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="movimentacao" id="entradaEstoque" value="entrada" checked>
+                                    <label class="form-check-label" for="entradaEstoque">Entrada (Compra/Reposição)</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="movimentacao" id="saidaEstoque" value="saida">
+                                    <label class="form-check-label" for="saidaEstoque">Saída (Desperdício/Uso Manual)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger mt-4 px-4"><i class="bi bi-arrow-repeat me-2"></i> Atualizar Estoque</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="cliente" class="content-section" style="display: none;">
+                <div class="card p-4">
+                    <h2 class="card-title text-danger mb-4"><i class="bi bi-people me-2"></i> Cadastro de Clientes</h2>
+                    <form id="form-cliente">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nomeCliente" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="nomeCliente" required placeholder="Ex: João da Silva">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefoneCliente" class="form-label">Telefone/WhatsApp</label>
+                                <input type="tel" class="form-control" id="telefoneCliente" placeholder="(99) 99999-9999" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="enderecoCliente" class="form-label">Endereço Completo (Para Delivery)</label>
+                                <textarea class="form-control" id="enderecoCliente" rows="2" placeholder="Rua, Número, Bairro, Cidade - Complemento"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger mt-4 px-4"><i class="bi bi-person-plus-fill me-2"></i> Cadastrar Cliente</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="vendas" class="content-section" style="display: none;">
+                <div class="card p-4">
+                    <h2 class="card-title text-danger mb-4"><i class="bi bi-cart-fill me-2"></i> Registrar Venda</h2>
+                    <form id="form-vendas">
+                        <div class="row g-3">
+                            
+                            <div class="col-md-6">
+                                <label for="clienteVenda" class="form-label">Cliente</label>
+                                <select class="form-select" id="clienteVenda" required>
+                                    <option selected disabled value="">Selecione um cliente (ou venda balcão)</option>
+                                    <option value="balcao">Venda de Balcão (Anônimo)</option>
+                                    <option>João da Silva</option>
+                                    <option>Maria Oliveira</option>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="vendedor" class="form-label">Vendedor/Caixa</label>
+                                <input type="text" class="form-control" id="vendedor" required placeholder="Seu nome/usuário">
+                            </div>
+
+                            <h5 class="mt-4">Adicionar Item ao Pedido</h5>
+                            
+                            <div class="col-md-5">
+                                <label for="produtoVenda" class="form-label">Produto Vendido</label>
+                                <select class="form-select" id="produtoVenda">
+                                    <option selected disabled value="">Selecione o produto...</option>
+                                    <option>X-Salada Clássico</option>
+                                    <option>Batata Frita Média</option>
+                                    <option>Refrigerante Lata</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="quantidadeVenda" class="form-label">Quantidade</label>
+                                <input type="number" class="form-control" id="quantidadeVenda" min="1" value="1">
+                            </div>
+                            <div class="col-md-4 d-flex align-items-end">
+                                <button type="button" class="btn btn-outline-success w-100" id="adicionarItem"><i class="bi bi-bag-plus me-2"></i> Adicionar Item</button>
+                            </div>
+                            
+                            <div class="col-12 mt-4">
+                                <h6>Itens do Pedido</h6>
+                                <ul class="list-group" id="listaItens">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center text-muted">
+                                        Nenhum item adicionado.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-12 text-end mt-3">
+                                <h4 class="text-dark">Total: <span class="text-danger fw-bold" id="totalVenda">R$ 0,00</span></h4>
+                            </div>
+                            
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-lg w-100 mt-4"><i class="bi bi-check-circle-fill me-2"></i> Finalizar Venda</button>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NN5SrVh2JQdEtW+YfMXTiCC75mWl5VkfeUKN/9Ig" crossorigin="anonymous"></script>
+    <script src="new.js"></script>
+</body>
+</html>
