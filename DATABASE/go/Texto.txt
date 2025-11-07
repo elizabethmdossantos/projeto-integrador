@@ -1,0 +1,11 @@
+IDEIAS DAS CHAVES
+•Truckcentral=Todas as Keys aqui,registro
+•Empresa=Key?
+•Produto=Key em Cliente e Venda|AQUI É O CARDAPIO(checkbox),ver quiz|
+•Onde está o Cliente?(radio)=Key em Vendas
+•Para onde vai a (radio)Venda?|VENDA TIRA ESTOQUE|=Key em Estoque
+•Estoque=Key?
+
+FUNCIONANDO
+•CADASTRO EMPRESERAIAL
+•LOGIN EMPRESARIAL(sem nada lá)

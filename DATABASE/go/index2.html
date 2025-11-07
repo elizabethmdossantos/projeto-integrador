@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Maquinaria PRO - Conexão Confiável para sua Obra</title>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">Maquinaria <strong>PRO</strong></a>
+            <nav class="main-nav">
+                <a href="#">Encontrar Equipamento</a>
+                <a href="#">Para Operadores</a>
+                <a href="#">Sobre Nós</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="login-btn">Entrar</a>
+                <a href="#" class="btn btn-primary">Anunciar Equipamento</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container" id="telacriar">
+                <h2>Cadastro de Novo Usuário</h2>
+                <form class="registration-form">
+                    <label for="name">Nome Completo</label><br>
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required><br>
+
+                    <label for="cpf">CPF</label><br>
+                    <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF" required><br>
+
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="Digite email" required><br>
+
+                    <label for="telefone">Telefone</label><br>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Ex: (00) 00000-0000" required><br>
+
+                    <label for="endereco">Endereço</label><br>
+                    <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" required><br>
+
+                    <label for="password">Senha</label><br>
+                    <input type="password" id="password" name="password" required>
+                    <p>Deve conter pelo menos um número, uma letra minúscula e maiúscula,
+                     um caracter especial e ter pelo menos 8 cararacteres.</p><br>
+
+                    <label for="confirm-password">Confirmar Senha</label><br>
+                    <input type="password" id="confirm-password" name="confirm-password" required><br>
+
+                    <button type="submit" class="btn btn-primary" id="butaocriar">Cadastrar</button>
+                    <p class="message">Já tem uma conta? <a id="mostrarentrar">Entrar</a></p>
+                    <p class="message" id="mensagemcriar"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="form-container" id="telaentrar" style="display: none;">
+        <h2>Entrar</h2>
+        <label for="entrarcpf">Usuário</label>
+        <input type="text" id="entrarcpf" required>
+        <label for="entrarsenha">Senha</label>
+        <input type="password" id="entrarsenha" required>
+        <button id="butaoentrar">Entrar</button>
+        <p class="message">Não tem uma conta? <a id="mostarcriar">Criar Conta</a></p>
+        <p class="message" id="mensagementrar"></p>
+    </div>
+
+    <div class="form-container" id="telasucesso" style="display: none;">
+        <h2>✅ Sucesso ao Entrar!</h2>
+        <p>Aqui estão os dados que você inseriu:</p>
+        <div class="success-data">
+            <p><strong>Usuário:</strong> <span id="cpfcolocado"></span></p>
+            <p><strong>Senha:</strong> <span id="senhacolocado"></span></p>
+            <p><strong>Nome Completo:</strong> <span id="nomecolocado"></span></p>
+            <p><strong>Email:</strong> <span id="emailcolocado"></span></p>
+            <p><strong>Telefone:</strong> <span id="telefonecolocado"></span></p>
+            <p><strong>Endereço:</strong> <span id="enderecocolocado"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
