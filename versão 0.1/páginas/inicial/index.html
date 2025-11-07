@@ -18,8 +18,9 @@
                  <p class="logonav"><img src="/versão 0.1/imagens/carrologo.png" width="auto" height="90" alt=""></p>
                 <a class="navbar-brand fs-3 fw-bold text-danger text-decoration-none" href="#">TruckGestão</a>
                 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button id="navbarbutton" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span  class="navbar-toggler-icon"></span>
+                    
                 </button>
                 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -36,8 +37,8 @@
                         </li>
                         
                         <li class="nav-item d-flex align-items-center mt-2 mt-lg-0">
-                            <button class="btn btn-outline-primary me-2">Acessar</button>
-                            <button class="btn btn-primary">Teste Grátis</button>
+                            <button class="btn btn-outline-danger me-2">Acessar</button>
+                            <button class="btn btn-danger">Teste Grátis</button>
                         </li>
                     </ul>
                 </div>
@@ -79,63 +80,100 @@
             </div>
         </section>
 
-        <section id="modulos" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-5">Módulos Essenciais</h2>
-                
-                <div class="row g-4"> <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 shadow-sm border-start border-success border-5">
-                            <div class="card-body">
-                                <h4 class="card-title text-success">Controle de Vendas</h4>
-                                <p class="card-text">Registro rápido de pedidos, divisão de conta e integração com maquininhas de cartão.</p>
-                                <a href="#" class="btn btn-sm btn-outline-success">Saiba Mais →</a>
-                            </div>
+         <section id="modulos" class="py-5 bg-light">
+            <div class="container text-center">
+            <h3 class="mb-5 display-6 fw-bold text-dark">Módulos Essenciais</h3> 
+        
+            <div class="row g-4 justify-content-center"> <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-lg border-0 rounded-4 module-card module-card-danger"> <div class="card-body d-flex flex-column justify-content-between p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-cash-register fa-3x text-danger mb-3"></i> <h4 class="card-title fw-bold text-danger">Controle de Vendas</h4>
                         </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 shadow-sm border-start border-warning border-5">
-                            <div class="card-body">
-                                <h4 class="card-title text-warning">Gestão de Estoque</h4>
-                                <p class="card-text">Controle insumo a insumo. Saiba exatamente quanto de cada ingrediente você usou em cada evento.</p>
-                                <a href="#" class="btn btn-sm btn-outline-warning">Saiba Mais →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-12">
-                        <div class="card h-100 shadow-sm border-start border-secondary border-5">
-                            <div class="card-body">
-                                <h4 class="card-title text-secondary">Relatórios de Eventos</h4>
-                                <p class="card-text">Veja o faturamento exato de cada feira, evento ou ponto fixo no final do dia.</p>
-                                <a href="#" class="btn btn-sm btn-outline-secondary">Saiba Mais →</a>
-                            </div>
-                        </div>
+                        <p class="card-text text-secondary">Registro rápido de pedidos, divisão de conta e integração com maquininhas de cartão, otimizando seu atendimento.</p>
+                        <a href="#" class="btn btn-outline-danger mt-3 align-self-center">Saiba Mais <i class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section id="integracoes" class="py-5">
-             <div class="container text-center">
-                <h3 class="mb-4">Integração com as ferramentas que você já usa:</h3>
-                <div class="d-flex justify-content-center flex-wrap gap-4">
-                    <div class="p-3 bg-light border rounded">Pagamento Pix</div>
-                    <div class="p-3 bg-light border rounded">iFood</div>
-                    <div class="p-3 bg-light border rounded">ERP Básico</div>
-                    <div class="p-3 bg-light border rounded">Google Maps</div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-lg border-0 rounded-4 module-card module-card-danger"> <div class="card-body d-flex flex-column justify-content-between p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-boxes fa-3x text-danger mb-3"></i> <h4 class="card-title fw-bold text-danger">Gestão de Estoque</h4>
+                        </div>
+                        <p class="card-text text-secondary">Controle insumo a insumo. Saiba exatamente quanto de cada ingrediente você usou em cada evento para evitar perdas.</p>
+                        <a href="#" class="btn btn-outline-danger mt-3 align-self-center">Saiba Mais <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
                 </div>
-             </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4"> <div class="card h-100 shadow-lg border-0 rounded-4 module-card module-card-danger"> <div class="card-body d-flex flex-column justify-content-between p-4">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-chart-line fa-3x text-danger mb-3"></i> <h4 class="card-title fw-bold text-danger">Relatórios de Eventos</h4>
+                        </div>
+                        <p class="card-text text-secondary">Veja o faturamento exato de cada feira, evento ou ponto fixo no final do dia, com dados claros e precisos.</p>
+                        <a href="#" class="btn btn-outline-danger mt-3 align-self-center">Saiba Mais <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            </div>
         </section>
 
+        <section id="planos" class="py-5">
+            <div class="container text-center">
+            <h3 class="mb-5 display-6 text-dark">Planos acessíveis para seu restaurante</h3>
+            <div class="d-flex justify-content-center flex-wrap gap-4">
+
+            <div class="p-5 h-100 shadow-sm border-start border-danger border-5 bg-white rounded">
+                <h4 class="mb-3 text-danger">Plano Básico</h4>
+                <h2 class="text-dark mb-4">R$ 59 <small class="text-muted fs-5">/mês</small></h2>
+                
+                <a href="#contratar-basico" class="btn btn-outline-danger w-100 mb-4">Assinar</a>
+                
+                <ul class="list-unstyled text-start">
+                    <li>✓ Cadastro de produtos</li>
+                    <li>✓ Vendas rápidas</li>
+                    <li>✓ Relatórios de vendas **(Essenciais)**</li>
+                    <li>✓ Impressão de pedidos</li>
+                    <li>✓ Gestão de Estoque e Vendas</li>
+                    <li>✓ Suporte técnico **(Padrão)**</li>
+                    <hr class="my-2">
+                    <li class="text-muted">✕ Módulo de Comandas e Mesas</li>
+                    <li class="text-muted">✕ Integração com Apps de Delivery</li>
+                </ul>
+            </div>
+
+            <div class="p-5 h-100 shadow-lg border-start border-danger border-5 bg-white rounded position-relative">
+                <span class="badge bg-danger position-absolute top-0 start-50 translate-middle py-2 px-3 fs-6">Mais Popular</span>
+                
+                <h4 class="mb-3 mt-3 text-danger">Plano Premium</h4>
+                <h2 class="text-dark mb-4">R$ 99 <small class="text-muted fs-5">/mês</small></h2>
+                
+                <a href="#contratar-premium" class="btn btn-outline-danger w-100 mb-4">Assinar Agora</a>
+                
+                <ul class="list-unstyled text-start">
+                    <li class="fw-bold text-success">✓ Todos os recursos do Básico</li>
+                    <hr class="my-2">
+                    <li>★ Módulo de Comandas e Mesas</li>
+                    <li>★ Integração com Apps de Delivery</li>
+                    <li>★ Relatórios de **Business Intelligence (BI)**</li>
+                    <li>★ Programa de Fidelidade de Clientes</li>
+                    <li>★ Suporte **Prioritário**</li>
+                </ul>
+            </div>
+            
+            </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer pt-5 pb-3 bg-dark text-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-12 mb-4">
-                    <h4 class="fw-bold text-white">TruckGestão</h4>
-                    <p class="text-white">Simplificando a operação do seu Food Truck.</p>
+                    <h5 class="fw-bold text-white mb-3">TruckGestão</h5>
+                    <p class="text-white">Simplificando a gestão do seu Food Truck.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5 class="text-white mb-3">Links Rápidos</h5>
@@ -148,7 +186,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5 class="text-white mb-3">Fale Conosco</h5>
                     <p class="text-white">Email: contato@truckgestao.com</p>
-                    <p class="text-white">WhatsApp: (XX) 9XXXX-XXXX</p>
+                    <p class="text-white">WhatsApp: (00) 98877-6655</p>
                 </div>
             </div>
             <div class="text-center border-top border-secondary pt-3 mt-3">
