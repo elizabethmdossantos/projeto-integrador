@@ -12,6 +12,10 @@ body {
 .border-start {
     border-left-width: 5px !important; 
 }
+#navbarnav{
+    margin-right: 2%;
+    
+}
 
 @media (max-width: 767.98px) { 
     .mobile-focus .container {
