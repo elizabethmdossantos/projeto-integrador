@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckGestão: Ponto de Venda (PDV)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        main {
+            padding-top: 100px; 
+            min-height: 100vh;
+        }
+        /* Estiliza o painel de pedido para ser alto */
+        .order-panel {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <header class="header bg-white shadow-sm">
+        <div class="container-fluid container-lg">
+            <nav class="navbar navbar-expand-lg fixed-top bg-white w-100 ">
+                <p class="logonav"><img src="/versão 0.1/imagens/carrologo.png" width="auto" height="90" alt=""></p>
+                <a class="navbar-brand fs-3 fw-bold text-danger text-decoration-none" href="../dashboard/index.html">TruckGestão</a>
+
+                <button id="navbarbutton" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary me-3" href="../dashboard/index.html"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center mt-2 mt-lg-0">
+                            <a href="../login/index.html" class="btn btn-outline-secondary me-2">Sair <i class="fas fa-sign-out-alt ms-1"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-5 bg-light">
+        <div class="container-fluid container-lg">
+            <h1 class="mb-4 display-6 fw-bold text-dark"><i class="fas fa-cash-register me-2 text-danger"></i> Ponto de Venda (PDV)</h1>
+            
+            <div class="row g-4">
+                
+                <div class="col-lg-7">
+                    <div class="p-4 bg-white shadow-sm rounded-4 border-0">
+                        <h2 class="h4 mb-3 fw-bold text-danger"><i class="fas fa-pizza-slice me-2"></i> Cardápio por Categoria</h2>
+                        
+                        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active text-danger" id="tab-sanduiche" data-bs-toggle="tab" data-bs-target="#sanduiche-pane" type="button" role="tab" aria-selected="true"><i class="fas fa-hamburger me-1"></i> Sanduíches</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link text-danger" id="tab-pizza" data-bs-toggle="tab" data-bs-target="#pizza-pane" type="button" role="tab" aria-selected="false"><i class="fas fa-pizza-slice me-1"></i> Pizzas</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link text-danger" id="tab-bebidas" data-bs-toggle="tab" data-bs-target="#bebidas-pane" type="button" role="tab" aria-selected="false"><i class="fas fa-wine-glass-alt me-1"></i> Bebidas</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link text-danger" id="tab-sobremesa" data-bs-toggle="tab" data-bs-target="#sobremesa-pane" type="button" role="tab" aria-selected="false"><i class="fas fa-ice-cream me-1"></i> Sobremesas</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link text-danger" id="tab-alimentos" data-bs-toggle="tab" data-bs-target="#alimentos-pane" type="button" role="tab" aria-selected="false"><i class="fas fa-utensils me-1"></i> Alimentos (Outros)</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="myTabContent" style="max-height: 60vh; overflow-y: auto;">
+                            <div class="tab-pane fade show active" id="sanduiche-pane" role="tabpanel" aria-labelledby="tab-sanduiche" tabindex="0">
+                                <div class="row g-3">
+                                    <div class="col-6 col-md-4">
+                                        <button class="btn btn-outline-danger w-100 py-3 item-card" data-item="Sanduíche Clássico" data-preco="25.00">Clássico R$25,00</button>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <button class="btn btn-outline-danger w-100 py-3 item-card" data-item="Sanduíche Vegano" data-preco="32.00">Vegano R$32,00</button>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <button class="btn btn-outline-danger w-100 py-3 item-card" data-item="Sanduíche Duplo" data-preco="40.00">Duplo R$40,00</button>
+                                    </div>
+                                    </div>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="pizza-pane" role="tabpanel" aria-labelledby="tab-pizza" tabindex="0">
+                                <p class="text-muted">Itens de Pizza...</p>
+                            </div>
+                             <div class="tab-pane fade" id="bebidas-pane" role="tabpanel" aria-labelledby="tab-bebidas" tabindex="0">
+                                <p class="text-muted">Itens de Bebidas...</p>
+                            </div>
+                             <div class="tab-pane fade" id="sobremesa-pane" role="tabpanel" aria-labelledby="tab-sobremesa" tabindex="0">
+                                <p class="text-muted">Itens de Sobremesa...</p>
+                            </div>
+                             <div class="tab-pane fade" id="alimentos-pane" role="tabpanel" aria-labelledby="tab-alimentos" tabindex="0">
+                                <p class="text-muted">Itens de Alimentos (Outros)...</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5">
+                    <div class="p-4 bg-white shadow-lg rounded-4 border-start border-danger border-5 order-panel">
+                        <h2 class="h4 mb-3 fw-bold text-dark"><i class="fas fa-receipt me-2 text-danger"></i> Detalhes do Pedido</h2>
+                        
+                        <div class="mb-4 p-3 bg-danger bg-opacity-10 rounded">
+                            <h5 class="fw-bold text-danger"><i class="fas fa-truck-moving me-1"></i> Tipo de Atendimento</h5>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <button class="btn btn-danger w-100"><i class="fas fa-utensils me-1"></i> Mesa/Comanda</button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-outline-danger w-100"><i class="fas fa-shipping-fast me-1"></i> Delivery</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="selectGarcom" class="form-label fw-bold">Garçom/Atendente</label>
+                            <select class="form-select border-danger" id="selectGarcom">
+                                <option selected>Selecione o Garçom</option>
+                                <option value="1">João Silva</option>
+                                <option value="2">Maria Oliveira</option>
+                                <option value="3">Pedro Souza</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex-grow-1 mb-4" style="max-height: 30vh; overflow-y: auto;">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Sanduíche Clássico
+                                    <span class="badge bg-danger rounded-pill">R$ 25,00</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Refrigerante Lata
+                                    <span class="badge bg-danger rounded-pill">R$ 8,00</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Batata Frita P
+                                    <span class="badge bg-danger rounded-pill">R$ 15,00</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center bg-light text-danger fw-bold">
+                                    TOTAL PARCIAL
+                                    <span>R$ 48,00</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-3 bg-dark text-white rounded mb-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="fw-bold mb-0">TOTAL DO PEDIDO:</h4>
+                                <h3 class="fw-bold mb-0" id="totalPedido">R$ 48,00</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Forma de Pagamento</label>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button class="btn btn-outline-success"><i class="fas fa-money-bill-wave me-1"></i> Dinheiro</button>
+                                <button class="btn btn-outline-success"><i class="fas fa-credit-card me-1"></i> Cartão</button>
+                                <button class="btn btn-outline-success"><i class="fas fa-qrcode me-1"></i> Pix</button>
+                                <button class="btn btn-outline-success"><i class="fas fa-wallet me-1"></i> Voucher</button>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid mt-auto">
+                            <button class="btn btn-danger btn-lg fw-bold"><i class="fas fa-check-circle me-2"></i> FINALIZAR VENDA</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer pt-5 pb-3 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h5 class="fw-bold text-white mb-3">TruckGestão</h5>
+                    <p class="text-white">Simplificando a gestão do seu Food Truck.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-white mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white">Vendas</a></li>
+                        <li><a href="#" class="text-decoration-none text-white">Estoque</a></li>
+                        <li><a href="#" class="text-decoration-none text-white">Configurações</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-white mb-3">Fale Conosco</h5>
+                    <p class="text-white">Email: contato@truckgestao.com</p>
+                    <p class="text-white">WhatsApp: (00) 98877-6655</p>
+                </div>
+            </div>
+            <div class="text-center border-top border-secondary pt-3 mt-3">
+                <p class="text-white mb-0">&copy; 2025 TruckGestão. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NN5SrVh2JQdEtW+YfMXTiCC75mWl5VkfeUKN/9Ig" crossorigin="anonymous"></script>
+</body>
+</html>

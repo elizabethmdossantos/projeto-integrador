@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckGestão: Pedidos Abertos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        main {
+            padding-top: 100px; 
+            min-height: 100vh;
+        }
+        /* Estilo para focar na tabela de pedidos */
+        .table-action-cell {
+            white-space: nowrap; /* Impede a quebra de linha dos botões */
+        }
+    </style>
+</head>
+<body>
+    <header class="header bg-white shadow-sm">
+        <div class="container-fluid container-lg">
+            <nav class="navbar navbar-expand-lg fixed-top bg-white w-100 ">
+                <p class="logonav"><img src="/versão 0.1/imagens/carrologo.png" width="auto" height="90" alt=""></p>
+                <a class="navbar-brand fs-3 fw-bold text-danger text-decoration-none" href="../dashboard/index.html">TruckGestão</a>
+
+                <button id="navbarbutton" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary me-3" href="../vendas/index.html"><i class="fas fa-cash-register me-1"></i> Nova Venda</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center mt-2 mt-lg-0">
+                            <a href="../login/index.html" class="btn btn-outline-secondary me-2">Sair <i class="fas fa-sign-out-alt ms-1"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-5 bg-light">
+        <div class="container-fluid container-lg">
+            <h1 class="mb-4 display-6 fw-bold text-dark"><i class="fas fa-list-alt me-2 text-danger"></i> Pedidos Ativos</h1>
+            
+            <div class="p-4 bg-white shadow-sm rounded-4 border-0">
+                <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="h5 fw-bold text-danger mb-2 mb-md-0">Total de 5 Pedidos Abertos</h2>
+                    
+                    <div class="d-flex gap-2">
+                        <select class="form-select form-select-sm border-danger" style="width: 150px;">
+                            <option selected>Todos os Garçons</option>
+                            <option>João</option>
+                            <option>Maria</option>
+                        </select>
+                        <select class="form-select form-select-sm border-danger" style="width: 150px;">
+                            <option selected>Todos os Status</option>
+                            <option>Aguardando</option>
+                            <option>Preparo</option>
+                        </select>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-sync-alt"></i></button>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead class="table-danger">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Mesa/Cliente</th>
+                                <th scope="col">Garçom</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Tempo</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">#0015</th>
+                                <td><span class="badge bg-primary"><i class="fas fa-utensils"></i> Mesa</span></td>
+                                <td>Mesa 4</td>
+                                <td>João</td>
+                                <td><span class="badge bg-warning text-dark"><i class="fas fa-hourglass-half"></i> Em Preparo</span></td>
+                                <td>00:08:30</td>
+                                <td>R$ 75,50</td>
+                                <td class="table-action-cell">
+                                    <button class="btn btn-sm btn-info text-white me-1"><i class="fas fa-eye"></i> Ver</button>
+                                    <button class="btn btn-sm btn-success me-1"><i class="fas fa-check"></i> Fechar</button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Cancelar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#0014</th>
+                                <td><span class="badge bg-dark"><i class="fas fa-shipping-fast"></i> Delivery</span></td>
+                                <td>Cliente Silva</td>
+                                <td>(N/A)</td>
+                                <td><span class="badge bg-danger"><i class="fas fa-clock"></i> Aguardando</span></td>
+                                <td>00:03:15</td>
+                                <td>R$ 120,00</td>
+                                <td class="table-action-cell">
+                                    <button class="btn btn-sm btn-info text-white me-1"><i class="fas fa-eye"></i> Ver</button>
+                                    <button class="btn btn-sm btn-success me-1"><i class="fas fa-check"></i> Fechar</button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Cancelar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">#0013</th>
+                                <td><span class="badge bg-primary"><i class="fas fa-utensils"></i> Comanda</span></td>
+                                <td>Comanda 102</td>
+                                <td>Maria</td>
+                                <td><span class="badge bg-success"><i class="fas fa-bell"></i> Pronto</span></td>
+                                <td>00:15:20</td>
+                                <td>R$ 45,90</td>
+                                <td class="table-action-cell">
+                                    <button class="btn btn-sm btn-info text-white me-1"><i class="fas fa-eye"></i> Ver</button>
+                                    <button class="btn btn-sm btn-success me-1"><i class="fas fa-check"></i> Fechar</button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Cancelar</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="footer pt-5 pb-3 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h5 class="fw-bold text-white mb-3">TruckGestão</h5>
+                    <p class="text-white">Simplificando a gestão do seu Food Truck.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-white mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white">Vendas</a></li>
+                        <li><a href="#" class="text-decoration-none text-white">Estoque</a></li>
+                        <li><a href="#" class="text-decoration-none text-white">Configurações</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-white mb-3">Fale Conosco</h5>
+                    <p class="text-white">Email: contato@truckgestao.com</p>
+                    <p class="text-white">WhatsApp: (00) 98877-6655</p>
+                </div>
+            </div>
+            <div class="text-center border-top border-secondary pt-3 mt-3">
+                <p class="text-white mb-0">&copy; 2025 TruckGestão. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NN5SrVh2JQdEtW+YfMXTiCC75mWl5VkfeUKN/9Ig" crossorigin="anonymous"></script>
+</body>
+</html>
